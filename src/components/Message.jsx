@@ -98,6 +98,7 @@ const Message = ({ message, fetchMessages }) => {
                   parentId: message.id,
                 });
                 setReplying(false);
+                setReplyMessage("");
               }}
             >
               <input
@@ -119,8 +120,7 @@ const Message = ({ message, fetchMessages }) => {
           </>
         )}
       </div>
-      {message &&
-        message.children.length > 0 &&
+      {message.children?.length > 0 &&
         message.children.map((message) => {
           return (
             <Message
