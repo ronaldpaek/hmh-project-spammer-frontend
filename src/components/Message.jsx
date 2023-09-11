@@ -10,7 +10,7 @@ const Message = ({ message, fetchMessages }) => {
 
   const handleLike = async (message) => {
     try {
-      const response = await fetch(`${API_URL}/message/${message.id}`, {
+      const response = await fetch(`${API_URL}/messages/${message.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const Message = ({ message, fetchMessages }) => {
 
   const handleDelete = async (message) => {
     try {
-      const response = await fetch(`${API_URL}/message/${message.id}`, {
+      const response = await fetch(`${API_URL}/messages/${message.id}`, {
         method: "DELETE",
       });
       if (!response.ok) {

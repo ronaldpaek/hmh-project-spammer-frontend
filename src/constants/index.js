@@ -1,3 +1,3 @@
-const API_URL = "https://spammer-backend.onrender.com";
+const API_URL = "https://project-spammer-backend.onrender.com";
 
 export { API_URL };

@@ -9,7 +9,7 @@ const EditMessage = ({ message, fetchMessages }) => {
 
   const handleEdit = async (message) => {
     try {
-      const response = await fetch(`${API_URL}/message/${message.id}`, {
+      const response = await fetch(`${API_URL}/messages/${message.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
