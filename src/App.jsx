@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
 import { CreateMessage, Message } from "./components";
-import { organizeMessagesHierarchy } from "../utils";
 import { API_URL } from "./constants";
 import "./App.css";
 
@@ -12,7 +11,6 @@ const App = () => {
     const dateB = new Date(b.createdAt);
     return dateB - dateA;
   });
-  const organizedMessages = organizeMessagesHierarchy(sortedMessages);
 
   const fetchMessages = async () => {
     try {
@@ -35,7 +33,7 @@ const App = () => {
     <div className="container">
       <h1>Spammer</h1>
       <CreateMessage fetchMessages={fetchMessages} />
-      {organizedMessages.map((message) => (
+      {sortedMessages.map((message) => (
         <Message
           key={message.id}
           message={message}
